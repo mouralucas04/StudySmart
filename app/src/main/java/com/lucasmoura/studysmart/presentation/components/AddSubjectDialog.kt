@@ -1,6 +1,5 @@
 package com.lucasmoura.studysmart.presentation.components
 
-import android.graphics.Color
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -14,13 +13,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -44,10 +41,10 @@ fun AddSubjectDialog(
     subjectName: String,
     onSubjectNameChange: (String) -> Unit,
     onGoalHoursChange: (String) -> Unit,
-    onDismissRequest : () -> Unit,
-    onConfirmButton : () -> Unit,
-    selectColors: List<Color>,
-    onColorChange: (List<Color>) -> Unit
+    onDismissRequest: () -> Unit,
+    onConfirmButton: () -> Unit,
+    selectColors: List<androidx.compose.ui.graphics.Color>,
+    onColorChange: (List<androidx.compose.ui.graphics.Color>) -> Unit
 ) {
     var subjectNameError by rememberSaveable { mutableStateOf<String?>(null) }
     var goalHoursError by rememberSaveable { mutableStateOf<String?>(null) }
@@ -85,8 +82,8 @@ fun AddSubjectDialog(
                                     .clip(CircleShape)
                                     .border(
                                         width = 1.dp,
-                                        color = if(colors == selectColors) Color.Black
-                                                else Color.Transparent,
+                                        color = if(colors == selectColors) androidx.compose.ui.graphics.Color.Black
+                                                else androidx.compose.ui.graphics.Color.Transparent,
                                         shape = CircleShape
                                     )
                                     .background(

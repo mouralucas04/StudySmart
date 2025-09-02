@@ -63,12 +63,9 @@ import com.ramcosta.composedestinations.generated.destinations.SessionScreenRout
 import com.ramcosta.composedestinations.generated.destinations.SubjectScreenRouteDestination
 import com.ramcosta.composedestinations.generated.destinations.TaskScreenRouteDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.shareIn
 
 @Destination<RootGraph>(start = true)
 @Composable
@@ -299,9 +296,9 @@ fun CountCardsSection(
 
 @Composable
 fun SubjectCardsSection(
+    modifier: Modifier = Modifier,
     subjectList: List<Subject>,
     emptyListText: String = "You don't any subjects. \n Click the + button to add new subject.",
-    modifier: Modifier = Modifier,
     onAddIconClick: () -> Unit,
     onSubjectCardClick: (Int?) -> Unit
 ) {
